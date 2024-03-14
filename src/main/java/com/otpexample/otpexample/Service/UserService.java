@@ -20,13 +20,14 @@ public class UserService {
         User user = userRepository.findByEmail(email);
         return user;
     }
-//    public void verifyEmail(User user){
-//        user.setEmailVerified(true);
-//        userRepository.save(user);
-//    }
-//
-//    public boolean isEmailVerified(String email) {
-//        User user = userRepository.findByEmail(email);
-//        return user!=null && user.isEmailVerified();
-//    }
+
+
+  public void verifyEmail(User user){
+       user.setEmailVerified(true);
+      userRepository.save(user);
+  }
+   public boolean isEmailVerified(String email) {
+      User user = userRepository.findByEmail(email);
+      return user!=null && user.isEmailVerified();
+    }
 }
